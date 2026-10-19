@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import json
 import numpy as np
 import pandas as pd
@@ -17,6 +18,8 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LogisticRegression as SklearnLogisticRegression
 
 
+=======
+>>>>>>> 3142c77390c0ab0c20ae503a64a813935d79f29c
 from grader_contracts.linear_models import (
     BaselineComparisonResult,
     ClassificationInput,
@@ -28,6 +31,7 @@ from grader_contracts.linear_models import (
 
 def train_linear_regression(data: RegressionInput) -> RegressionResult:
     """Обучите собственную линейную регрессию на train и верните прогноз для test."""
+<<<<<<< HEAD
     X_train = np.array(data.X_train, dtype=float)
     y_train = np.array(data.y_train, dtype=float)
     X_test = np.array(data.X_test, dtype=float)
@@ -74,10 +78,14 @@ def train_linear_regression(data: RegressionInput) -> RegressionResult:
         z_clipped = np.clip(z, -500, 500)
         return 1.0 / (1.0 + np.exp(-z_clipped))
 
+=======
+    raise NotImplementedError
+>>>>>>> 3142c77390c0ab0c20ae503a64a813935d79f29c
 
 
 def train_logistic_classifier(data: ClassificationInput) -> ClassificationResult:
     """Обучите собственный логистический классификатор на train и верните прогноз для test."""
+<<<<<<< HEAD
     X_train = np.array(data.X_train, dtype=float)
     y_train = np.array(data.y_train, dtype=float)
     X_test = np.array(data.X_test, dtype=float)
@@ -122,6 +130,9 @@ def train_logistic_classifier(data: ClassificationInput) -> ClassificationResult
         loss_history=loss_history
     )
     
+=======
+    raise NotImplementedError
+>>>>>>> 3142c77390c0ab0c20ae503a64a813935d79f29c
 
 
 def compare_classical_models(data: ClassificationInput) -> BaselineComparisonResult:
@@ -132,6 +143,7 @@ def compare_classical_models(data: ClassificationInput) -> BaselineComparisonRes
      "classification":{"own_logistic": {"roc_auc": ..., "accuracy": ..., "precision": ..., "recall": ..., "f1": ...},
                        "logistic_regression": {...}, "decision_tree": {...}, "knn": {...}}}.
     """
+<<<<<<< HEAD
     # 1. Собственная логистическая регрессия
     own_result = train_logistic_classifier(data)
     y_true = data.y_test
@@ -207,3 +219,6 @@ def compare_classical_models(data: ClassificationInput) -> BaselineComparisonRes
         decision_tree=decision_tree_metrics,
         knn=knn_metrics
     )
+=======
+    raise NotImplementedError
+>>>>>>> 3142c77390c0ab0c20ae503a64a813935d79f29c
